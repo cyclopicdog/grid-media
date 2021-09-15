@@ -1,0 +1,76 @@
+html {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+  color: white;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "red red red"
+    "blue green grey"
+    "blue black grey"
+    "pink pink pink";
+  grid-gap: 2%;
+}
+
+.item-red {
+  grid-area: red;
+  background: rgba(255, 0, 0, 0.5);
+}
+
+.item-black {
+  grid-area: black;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.item-blue {
+  grid-area: blue;
+  background: rgba(0, 0, 255, 0.5);
+}
+.item-green {
+  grid-area: green;
+  background: rgba(0, 255, 0, 0.5);
+}
+
+.item-grey {
+  grid-area: grey;
+  background: grey;
+}
+
+.item-pink {
+  grid-area: pink;
+  background: pink;
+}
+
+@media (max-width: 992px) {
+  body {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "red red"
+      "blue green"
+      "blue black"
+      "grey grey"
+      "pink pink";
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "red"
+      "blue"
+      "green"
+      "black"
+      "grey"
+      "pink";
+  }
+}
